@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_rv_bookCover"
+            android:layout_width="57dp"
+            android:layout_height="79dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/no_cover_thumb" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+
+            <TextView
+                android:id="@+id/et_rv_bookName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:maxLines="1"
+                android:text="Book Name"
+                android:textSize="8pt"
+                app:layout_constraintStart_toEndOf="@+id/iv_rv_bookCover" />
+
+            <TextView
+                android:id="@+id/et_rv_authorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:maxLines="1"
+                android:text="Author"
+                app:layout_constraintStart_toEndOf="@+id/iv_rv_bookCover"
+                app:layout_constraintTop_toBottomOf="@+id/et_rv_bookName" />
+        </LinearLayout>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
