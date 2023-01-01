@@ -103,11 +103,4 @@ public class AddBookActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(url)) Picasso.get().load(url).into(ivBookImg);
         etBookPublishedDate.setText(publishedDate);
     }
-
-//    @Override
-//    public void onBackPressed() {
-//        Intent backIntent = new Intent(this, MainActivity.class);
-//        finish();
-//        startActivity(backIntent);
-//    }
 }
