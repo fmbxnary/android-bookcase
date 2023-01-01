@@ -28,7 +28,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
-                    android:backgroundTint="#009688"
                     android:text="Save Note" />
             </LinearLayout>
 
@@ -46,7 +45,7 @@
                     <EditText
                         android:id="@+id/userNote"
                         android:layout_width="match_parent"
-                        android:layout_height="600dp"
+                        android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="Notes"
                         android:gravity="start|top"

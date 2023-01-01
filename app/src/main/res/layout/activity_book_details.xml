@@ -38,6 +38,7 @@
                 android:layout_height="102dp"
                 android:layout_gravity="center"
                 android:elevation="35dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/no_cover_thumb"
                 tools:layout_editor_absoluteX="120dp"
                 tools:layout_editor_absoluteY="64dp" />

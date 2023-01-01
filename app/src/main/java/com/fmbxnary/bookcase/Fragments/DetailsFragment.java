@@ -92,6 +92,7 @@ public class DetailsFragment extends Fragment {
                                     = MediaStore.Images.Media.getBitmap(
                                     getActivity().getContentResolver(),
                                     selectedImageUri);
+                            selectedImageBitmap = Bitmap.createScaledBitmap(selectedImageBitmap, 57, 80, false);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }

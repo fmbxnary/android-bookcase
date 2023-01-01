@@ -47,7 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_PUBLISH_DATE + " VARCHAR, " +
                 COLUMN_DESCRIPTION + " TEXT, " +
                 COLUMN_COVER + " BLOB," +
-                COLUMN_USER_NOTE + " TEXT DEFAULT '31haha');";
+                COLUMN_USER_NOTE + " TEXT DEFAULT '');";
         db.execSQL(query);
     }
 
