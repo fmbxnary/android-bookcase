@@ -1,14 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.DetailsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_save_book_sql"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#009688"
+                android:text="Update Book"
+                app:fabSize="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/book_img"
+                android:layout_width="73dp"
+                android:layout_height="102dp"
+                android:layout_gravity="center"
+                android:elevation="35dp"
+                android:src="@drawable/no_cover_thumb"
+                tools:layout_editor_absoluteX="120dp"
+                tools:layout_editor_absoluteY="64dp" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_isbn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ISBN"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="191dp"
+                    tools:layout_editor_absoluteY="328dp" />
+
+                <EditText
+                    android:id="@+id/book_isbn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="ISBN"
+                    android:inputType="text"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="352dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_book_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Title"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="191dp"
+                    tools:layout_editor_absoluteY="328dp" />
+
+                <EditText
+                    android:id="@+id/book_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Title"
+                    android:inputType="text"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="352dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_book_author"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Author"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="185dp"
+                    tools:layout_editor_absoluteY="401dp" />
+
+                <EditText
+                    android:id="@+id/book_author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Author"
+                    android:inputType="text"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="425dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_pageCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Page Count"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="169dp"
+                    tools:layout_editor_absoluteY="474dp" />
+
+                <EditText
+                    android:id="@+id/book_pageCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Page Count"
+                    android:inputType="numberDecimal"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="498dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_publishedDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Published Date"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="169dp"
+                    tools:layout_editor_absoluteY="474dp" />
+
+                <EditText
+                    android:id="@+id/book_publishedDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Published Date"
+                    android:inputType="numberDecimal"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="498dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:textAlignment="center"
+
+                    tools:layout_editor_absoluteX="170dp"
+                    tools:layout_editor_absoluteY="547dp" />
+
+                <EditText
+                    android:id="@+id/book_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Description"
+                    android:inputType="textMultiLine"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="571dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+</ScrollView>
 
 </FrameLayout>
