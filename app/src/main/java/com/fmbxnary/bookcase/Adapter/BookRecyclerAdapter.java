@@ -73,6 +73,5 @@ public class BookRecyclerAdapter extends RecyclerView.Adapter<BookRecyclerAdapte
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
-
     }
 }
