@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         itemTouchHelper.attachToRecyclerView(recyclerView); //set swipe to recyclerview
 
         bookRecyclerAdapter.setOnItemClickListener(book -> {
-            Intent intent = new Intent(getApplicationContext(), DetailsBookActivity.class);
+            Intent intent = new Intent(MainActivity.this, DetailsBookActivity.class);
+            intent.putExtra("book", book);
             startActivity(intent);
         });
     }
@@ -120,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             book.setPublishedDate(cursor.getString(4));
             book.setDescription(cursor.getString(5));
             book.setCover(cursor.getBlob(6));
+            book.setUserNote(cursor.getString(7));
             books.add(book);
             cursor.moveToNext();
         }
@@ -163,5 +165,12 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         bookRecyclerAdapter.setBooks(newBooks);
         bookRecyclerAdapter.notifyDataSetChanged();
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        books.clear();
+        fillTheArray();
     }
 }
