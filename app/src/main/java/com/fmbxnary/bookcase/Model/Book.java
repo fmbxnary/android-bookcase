@@ -1,6 +1,9 @@
 package com.fmbxnary.bookcase.Model;
 
-public class Book {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Book implements Parcelable {
     private byte[] cover;
     private String title;
     private String isbn;
@@ -8,10 +11,34 @@ public class Book {
     private int pageCount;
     private String description;
     private String publishedDate;
+    private String userNote = "";
 
     public Book() {
 
     }
+
+    protected Book(Parcel in) {
+        cover = in.createByteArray();
+        title = in.readString();
+        isbn = in.readString();
+        author = in.readString();
+        pageCount = in.readInt();
+        description = in.readString();
+        publishedDate = in.readString();
+        userNote = in.readString();
+    }
+
+    public static final Parcelable.Creator<Book> CREATOR = new Creator<Book>() {
+        @Override
+        public Book createFromParcel(Parcel in) {
+            return new Book(in);
+        }
+
+        @Override
+        public Book[] newArray(int size) {
+            return new Book[size];
+        }
+    };
 
     public String getIsbn() {
         return isbn;
@@ -68,4 +95,30 @@ public class Book {
     public void setPublishedDate(String publishedDate) {
         this.publishedDate = publishedDate;
     }
+
+    public String getUserNote() {
+        return userNote;
+    }
+
+    public void setUserNote(String userNote) {
+        this.userNote = userNote;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeByteArray(cover);
+        dest.writeString(title);
+        dest.writeString(isbn);
+        dest.writeString(author);
+        dest.writeInt(pageCount);
+        dest.writeString(description);
+        dest.writeString(publishedDate);
+        dest.writeString(userNote);
+    }
 }
+
