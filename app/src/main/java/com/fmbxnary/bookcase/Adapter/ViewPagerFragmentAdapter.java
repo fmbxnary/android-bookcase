@@ -8,28 +8,29 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.fmbxnary.bookcase.Fragments.DetailsFragment;
 import com.fmbxnary.bookcase.Fragments.NoteFragment;
 
-public class ViewPagerFragmentAdapter extends FragmentStateAdapter {
+import java.util.ArrayList;
+import java.util.List;
 
-    private final String[] titles = new String[]{"Details", "Notes"};
-    public ViewPagerFragmentAdapter(@NonNull FragmentActivity fragmentActivity) {
+public class ViewPagerFragmentAdapter extends FragmentStateAdapter {
+    private final List<Fragment> fragments = new ArrayList<>();
+
+    public ViewPagerFragmentAdapter(FragmentActivity fragmentActivity) {
         super(fragmentActivity);
+    }
+
+    public void addFragment(Fragment fragment) {
+        fragments.add(fragment);
+        notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        switch (position)
-        {
-            case 0:
-                return new DetailsFragment();
-            case 1:
-                return new NoteFragment();
-        }
-        return new DetailsFragment();
+        return fragments.get(position);
     }
 
     @Override
     public int getItemCount() {
-        return titles.length;
+        return fragments.size();
     }
 }
